@@ -1,0 +1,982 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel='shortcut icon' type='image/x-icon' href="{% static 'landing_page/images/favicon.ico' %}" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="WarwickTECH">
+    <meta name="author" content="Jamie Mahoney &amp; Alex Bucknall">
+
+    <title>WarwickTECH</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'landing_page/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'landing_page/css/style.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'landing_page/font/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'landing_page/css/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'landing_page/css/owl.theme.warwickblue.css' %}">
+
+    <style>
+        .main {
+            min-height: 100;
+            background: url("{% static 'landing_page/images/background.jpg' %}"), linear-gradient(45deg, #a0003c, #1e1478, #0078a0, #009678);
+            background-position: 80% center, bottom;
+            background-size: cover, cover;
+            background-blend-mode: multiply;
+            color: #FFFFFF;
+        }
+        
+        .backdrop {
+            text-align: center;
+            background-attachment: scroll;
+            background-image: url({% static 'landing_page/images/redbull.jpg' %});
+            background-position: center center;
+            background-repeat: none;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+        
+        header {
+            text-align: center;
+            color: #fff;
+            background-attachment: scroll;
+            background-image: url({% static 'landing_page/images/header-bg.jpg' %});
+            background-position: center center;
+            background-repeat: none;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+    </style>
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">WARWICKTECH</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Events</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#sponsor">Sponsors</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Team</a>
+                    </li>
+
+                    <li>
+                        <a class="typeform-share" href="https://alex467.typeform.com/to/lfIsfy" data-mode="2" target="_blank">Sign up</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text" style="padding-top:20%;">
+                <div class="row">
+                    <img src="{% static 'landing_page/images/logos/warwicktech.png' %}" class="img-responsive img-centered" alt="warwicktech logo">
+
+                </div>
+                <!--                 <div class="intro-lead-in">A community for creators, makers and innovators</div>-->
+                <div class="row" style="padding-top:50px;">
+                    <div class="btn-group">
+                        <a href="#about" class="page-scroll btn btn-xl">Discover</a>
+                        <a href="https://hack.warwick.tech/" class="page-scroll btn btn-xl" style="background-color:grey;border-color:grey;">WarwickHACK</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Who Are We?</h2>
+                    <h3 class="section-subheading text-muted">A Passionate Team of Mixed Discipline Warwick University Students.</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-users fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">A Community for Makers, Creators and Innovators</h4>
+                    <p class="text-muted">WarwickTECH is a university society with the objective of bringing together developers, entrepreneurs and anyone interested in technology to solve problems, build products and learn skills. Join fellow students to tackle real problems and challenges!</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-calendar fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Expand your Technical, Coding and Entrepreneurial skills</h4>
+                    <p class="text-muted">Designed for anyone who has had that bright idea; WarwickTECH aims to help students develop both their technical and entrepreneurial skills. Throughout the year, we run events like as Hackathons, Code Workshops as well as Guest Speaker Talks and Startup Weekends.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-lightbulb-o fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Bringing Together Great Ideas and Great People</h4>
+                    <p class="text-muted">We aim to be the platform for students to come together and share their ideas. Our goal is to create a space for students to find potential co-founders, to collaborate on projects and to develop their personal skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WarwickHACK Section -->
+    <section id="about" style="background-color:#fafafa;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">WarwickHACK 2017</h2>
+                    <h3 class="section-subheading text-muted">WarwickHACK is back again for 2017! With an amazing line up of workshops and speakers, be sure not to miss out.</h3>
+                    <a href="https://hack.warwick.tech/" class="page-scroll btn btn-xl">More Info</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid Section -->
+    <div class="backdrop">
+        <section id="portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">What Do We Do?</h2>
+                        <h3 class="section-subheading text-muted">A glimpse into a few of our events.</h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-code fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{% static 'landing_page/images/events/warwickhack2.jpg' %}" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>WarwickHACK</h4>
+                            <p class="text-muted">Warwick's Flagship Hackathon</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-rocket fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{% static 'landing_page/images/events/startup.jpg' %}" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Campus Startup</h4>
+                            <p class="text-muted">Our Entrepreneurs' Meetup</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-cogs fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{% static 'landing_page/images/events/crashcourse.jpg' %}" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Workshops</h4>
+                            <p class="text-muted">Gain the Skills, Ideas and Knowledge</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-bolt fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{% static 'landing_page/images/events/localhack.jpg' %}" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Local Hack Day</h4>
+                            <p class="text-muted">Global Community Hackathon</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-users fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{% static 'landing_page/images/events/startupweekend.jpg' %}" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Startup Weekend</h4>
+                            <p class="text-muted">Share Ideas; Launch Startups</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-calendar fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{% static 'landing_page/images/events/calen.jpg' %}" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Calendar</h4>
+                            <p class="text-muted">Our Upcoming Events</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <!-- Sponsor Section -->
+    <section id="sponsor">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12 sponsor-item">
+                    <a href="http://careers.jpmorgan.com/careers/apply-students" class="sponsor-link text-center" data-toggle="modal">
+                        <img src="{% static 'landing_page/images/sponsors/jpmorgan.png' %}" class="img-responsive" alt="jpmorgan">
+                    </a>
+                    <br>
+                    <a href="https://www.credit-suisse.com/global/en.html" class="sponsor-link text-center" data-toggle="modal">
+                        <img src="{% static 'landing_page/images/cs_logo.png' %}" class="img-responsive" alt="credit_suisse">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-12 sponsor-item">
+                    <a href="https://www.blackpepper.co.uk" class="sponsor-link text-center" data-toggle="modal">
+                        <img src="{% static 'landing_page/images/sponsors/bpepper.png' %}" class="img-responsive" alt="bootcamp">
+                    </a>
+                    <br>
+                    <a href="https://www.etech.net/" class="sponsor-link text-center" data-toggle="modal">
+                        <img src="{% static 'landing_page/images/sponsors/etech.png' %}" class="img-responsive" alt="etech">
+                    </a>
+                </div>
+                <div class="col-md-6 col-sm-12 text-center">
+                    <h2 class="section-heading">Friends &amp; Sponsors</h2>
+                    <p style="font-style:italic;" class="large text-muted">We're working with industry leaders to bring amazing opportunities to our members.</p>
+                    <p class="large">We partner with our sponsors to help them find top graduates as well as aid our members get jobs with some of the top employers globally. We’re also helping our cohort of student start-ups by connecting them with established incubators, accelerators and investors as well as helping to support them with our resources and network of experienced entrepreneurs.
+                    </p>
+                    <p class="text-muted">If you're interested in sponsoring us, check out our sponsorship brochure below and drop us an <a href="#contact"> email</a>.</p>
+                    <br>
+                    <a href="{% static 'landing_page/sponsorship_brochure.pdf' %}" class="page-scroll btn btn-xl">Sponsor Pack</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="main">
+        <section id="technight">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel-body">
+                            <img style="display: block;margin-left: auto;margin-right:auto;" src="{% static 'landing_page/images/technightldn.png' %}" class="img-responsive" alt="3d"></img>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h2 class="section-heading">A Celebration of Diversity in Tech</h2>
+                        <p class="large">Thursday the <strong>17th of March 2016</strong> marked the day of the first Tech Night LDN. The teams behind WarwickTECH, UCLU TechSoc and UCLU Leading Women came together to celebrate diversity within technology, in the Shard, London.</p>
+                        <p class="large">Tech Night LDN is a mini-conference packed with talks, workshops and networking for students and recent graduates who are curious about technology. Expect an evening of inspiration and motivation.
+                        </p>
+                        <p class="large">
+                            We believe that in order to truly make strides towards achieving diversity in tech, we need to include all genders and different races in the conversation. Even if you’re new to technology, or are really passionate about it, we hope you'll join us next
+                            year!
+                        </p>
+                        <br>
+                        <p class="large">
+                            This years TechNightLND will be held on Monday 6th March 2017. More details will be posted soon!
+                        </p>
+
+                        <br>
+                        <a href="http://technight.london" class="page-scroll btn btn-xl" style="background-color:#a0003c;border-color:#a0003c;">Returning Soon!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <aside class="clients" style="background-color:#222222;">
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <a href="http://warwick.tech">
+                        <img src="{% static 'landing_page/images/warwicktech.png' %}" class="img-responsive img-centered sponsor" alt="warwicktech">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <a href="http://techsoc.io/">
+                        <img src="{% static 'landing_page/images/uclutechsoc.png' %}" class="img-responsive img-centered sponsor" alt="uclutechsoc">
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+    </aside>
+
+    <div class="backdrop" style="background-image: url({% static 'landing_page/images/current-event.jpg' %});">
+        <section id="current">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <h2 class="section-heading">NG Code Jam</h2>
+                        <p style="font-style:italic;" class="large text-muted">Wednesday the <strong>28th of October 2015</strong> marked the start of our Code Challenge with National Grid.</p>
+                        <p class="large">National Grid's Engineers have a problem; they need to calculate the volume of a complex 3D model. They want your help to design a software solution that lets their Engineers calculate this on the go using an iPad. Challenged for
+                            the best solution, teams will be competing for the prize of an <strong>iPad Air 2</strong> and the just released <strong>Nexus 5X</strong> for each team member. Teams will have 4 weeks to work on the best solution and will
+                            present to a panel of judges.
+                        </p>
+                        <p class="text-muted">This challenge was open to WarwickTECH members. If you aren't already a member and you want to get involved with events like this, you can signup for free by clicking <a class="typeform-share" href="https://alex467.typeform.com/to/lfIsfy" data-mode="2" target="_blank">here</a>!</p>
+                        <a href="http://www2.nationalgrid.com/uk/"><img src="{% static 'landing_page/images/nationalgrid.png' %}" class="img-responsive" width="350" style="margin-left:auto;margin-right:auto;" alt="ng"></img>
+                        </a>
+
+                        <br>
+                        <div class="btn-group">
+
+                            <a href="/ng-challenge.pdf" class="page-scroll btn btn-xl" style="background-color:grey;border-color:grey;">More info</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel-body">
+
+                            <img src="{% static 'landing_page/images/3d-model.png' %}" class="img-responsive" alt="3d"></img>
+                        </div>
+                        <h4>3D Model</h4>
+                        <p>An excavated site scanned using a <a href="http://structure.io">structure</a> scanner device</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Our Team</h2>
+                    <h3 class="section-subheading text-muted">We're a passionate team of students with a breadth of different skills, interests and degrees!</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="col-sm-8 col-xs-6 col-xs-offset-3 col-sm-offset-2">
+                            <div class="team-member">
+                                <img src="{% static 'landing_page/images/team/artur.png' %}" class="img-responsive img-circle" alt="">
+                                <h4>Artur <br>Safaryan</h4>
+                                <p class="text-muted">President</p>
+                                <p><a href="mailto:artur@warwick.tech" target="_top"><i class="fa fa-envelope-o fa-2x"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-sm-8 col-xs-6 col-xs-offset-3 col-sm-offset-2">
+                            <div class="team-member">
+                                <img src="{% static 'landing_page/images/team/duncan.png' %}" class="img-responsive img-circle" alt="">
+                                <h4>Duncan <br>MacMillan</h4>
+                                <p class="text-muted">Vice President</p>
+                                <p><a href="mailto:duncan@warwick.tech" target="_top"><i class="fa fa-envelope-o fa-2x"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="item">
+                        <div class="col-sm-8 col-xs-6 col-xs-offset-3 col-sm-offset-2">
+                            <div class="team-member">
+                                <img src="img/team/mel.png" class="img-responsive img-circle" alt="">
+                                <h4>Melisa <br>Kaner</h4>
+                                <p class="text-muted">Events Lead</p>
+                                <p><a href="mailto:melisa@warwick.tech" target="_top">melisa@warwick.tech</a></p>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="item">
+                        <div class="col-sm-8 col-xs-6 col-xs-offset-3 col-sm-offset-2">
+                            <div class="team-member">
+                                <img src="{% static 'landing_page/images/team/elizabeth.png' %}" class="img-responsive img-circle" alt="">
+                                <h4>Elizabeth <br>Lam</h4>
+                                <p class="text-muted">Partnerships Lead</p>
+                                <p><a href="mailto:elizabeth@warwick.tech" target="_top"><i class="fa fa-envelope-o fa-2x"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-sm-8 col-xs-6 col-xs-offset-3 col-sm-offset-2">
+                            <div class="team-member">
+                                <img src="{% static 'landing_page/images/team/ingu.png' %}" class="img-responsive img-circle" alt="">
+                                <h4>Ingu <br>Kang</h4>
+                                <p class="text-muted">Operations Lead</p>
+                                <p><a href="mailto:ingu@warwick.tech" target="_top"><i class="fa fa-envelope-o fa-2x"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-sm-8 col-xs-6 col-xs-offset-3 col-sm-offset-2">
+                            <div class="team-member">
+                                <img src="{% static 'landing_page/images/team/emma.png' %}" class="img-responsive img-circle" alt="">
+                                <h4>Emma <br>Dutton</h4>
+                                <p class="text-muted">Development Lead</p>
+                                <p><a href="mailto:emma@warwick.tech" target="_top"><i class="fa fa-envelope-o fa-2x"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-sm-8 col-xs-6 col-xs-offset-3 col-sm-offset-2">
+                            <div class="team-member">
+                                <img src="{% static 'landing_page/images/team/christian.png' %}" class="img-responsive img-circle" alt="">
+                                <h4>Christian <br>Piponides</h4>
+                                <p class="text-muted">People Lead</p>
+                                <p><a href="mailto:christian@warwick.tech" target="_top"><i class="fa fa-envelope-o fa-2x"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-sm-8 col-xs-6 col-xs-offset-3 col-sm-offset-2">
+                            <div class="team-member">
+                                <img src="{% static 'landing_page/images/team/alex.png' %}" class="img-responsive img-circle" alt="">
+                                <h4>Alex <br>Bucknall</h4>
+                                <p class="text-muted">Trustee</p>
+                                <p><a href="mailto:alex@warwick.tech" target="_top"><i class="fa fa-envelope-o fa-2x"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-sm-8 col-xs-6 col-xs-offset-3 col-sm-offset-2">
+                            <div class="team-member">
+                                <img src="{% static 'landing_page/images/team/harry.png' %}" class="img-responsive img-circle" alt="">
+                                <h4>Harry <br>McLaverty</h4>
+                                <p class="text-muted">Trustee</p>
+                                <p><a href="mailto:harry@warwick.tech" target="_top"><i class="fa fa-envelope-o fa-2x"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h4>Interested in joining us?</h4>
+                    <div class="col-lg-offset-3 col-lg-6 text-center">
+                        <p class="section-subheading text-muted">We're a little bit different from most student societies as we recruit on a rolling basis, so check back here for job openings or <a class="typeform-share" href="https://alex467.typeform.com/to/lfIsfy" data-mode="2" target="_blank">sign up</a> for email updates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- partners Aside -->
+    <aside class="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <a href="https://mlh.io/">
+                        <img src="{% static 'landing_page/images/logos/mlh.png' %}" class="img-responsive img-centered sponsor" alt="mlh">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="http://www.bcs.org/">
+                        <img src="{% static 'landing_page/images/logos/bcs.jpg' %}" class="img-responsive img-centered sponsor" alt="bcs">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="http://www2.warwick.ac.uk/fac/sci/eng/">
+                        <img src="{% static 'landing_page/images/logos/eng.jpg' %}" class="img-responsive img-centered sponsor" alt="engineering">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="http://www2.warwick.ac.uk/fac/sci/dcs/">
+                        <img src="{% static 'landing_page/images/logos/dcs.jpg' %}" class="img-responsive img-centered sponsor" alt="computer_science">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </aside>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contact Us</h2>
+                    <h3 style="color:grey;">Drop us an email or send us a cheeky tweet!</h3>
+                    <h4 style="color:grey;">info@warwick.tech</h4>
+                </div>
+            </div>
+
+
+            <br>
+
+            <div class="row">
+                <div class="col-lg-offset-3 col-lg-6 text-center">
+                    <a href="mailto:info@warwick.tech?Subject=Hey%20there!" class="page-scroll btn btn-xl">Email</a>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-offset-3 col-lg-6 text-center">
+                    <a href="https://twitter.com/intent/tweet?screen_name=WarwickTECH" class="page-scroll btn btn-xl" data-related="WarwickTECH">@WarwickTECH</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; WarwickTECH 2016</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://twitter.com/warwicktech"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://medium.com/@WarwickTECH"><i class="fa fa-medium"></i></a>
+                        </li>
+                        <li><a href="https://www.facebook.com/warwicktech"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/company/warwicktech"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <span class="copyright"><a href="https://warwicktech-group.slack.com/">Join our <strong>Slack</strong>!</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Portfolio Modals -->
+    <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+    <!-- Portfolio Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>WarwickHACK</h2>
+                            <p class="item-intro text-muted">WarwickHACK is our University Hackathon, part of the EU MLH League. Participants from all over the world have come to learn and compete!</p>
+                            <div class="col-md-6 col-sm-6 portfolio-item">
+                                <img src="{% static 'landing_page/images/events/warwickhack/hack.jpg' %}" class="img-responsive" alt="">
+
+                            </div>
+                            <div class="col-md-6 col-sm-6 portfolio-item">
+                                <img src="{% static 'landing_page/images/events/warwickhack/hack1.jpg' %}" class="img-responsive" alt="">
+
+                            </div>
+                            <div class="col-md-6 col-sm-6 portfolio-item">
+                                <img src="{% static 'landing_page/images/events/warwickhack/hack2.jpg' %}" class="img-responsive" alt="">
+
+                            </div>
+                            <div class="col-md-6 col-sm-6 portfolio-item">
+                                <img src="{% static 'landing_page/images/events/warwickhack/hack3.jpg' %}" class="img-responsive" alt="">
+                            </div>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Campus Startup</h2>
+                            <p class="item-intro text-muted">Campus Startup (A <a href="http://www.nuklius.io" target="_blank">Nuklius</a> Initiative) is our informal drop-in session for entrepreneurs, hackers and designers. We meet fortnightly for drinks to chat about on-going projects,
+                                share advice and network. </p>
+                            <a href="http://www.nuklius.io" target="_blank"><img src="{% static 'landing_page/images/logos/nuklius.png' %}"></img>
+                            </a>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 portfolio-item">
+                                    <img src="{% static 'landing_page/images/events/campusstartup/one.JPG' %}" class="img-responsive" alt="1">
+
+                                </div>
+                                <div class="col-md-6 col-sm-6 portfolio-item">
+                                    <img src="{% static 'landing_page/images/events/campusstartup/two.JPG' %}" class="img-responsive" alt="2">
+
+                                </div>
+                                <div class="col-md-6 col-sm-6 portfolio-item">
+                                    <img src="{% static 'landing_page/images/events/campusstartup/three.JPG' %}" class="img-responsive" alt="3">
+
+                                </div>
+                                <div class="col-md-6 col-sm-6 portfolio-item">
+                                    <img src="{% static 'landing_page/images/events/campusstartup/four.JPG' %}" class="img-responsive" alt="4">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Crash Course</h2>
+                            <p class="item-intro text-muted">Our Crash Course Workshops are brand new starting in the 2015-16 academic year. We’ll be running a wide selection of tech, business and design workshops aimed at entrepreneurs and hackers. </p>
+                            <p class="large">Coming Soon!</p>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Local Hack Day</h2>
+                            <h3>10/10/2015</h3>
+                            <p class="item-intro text-muted">Local Hack Day is a 12 hour mini-hackathon brings together the local hacker community to celebrate building awesome technology. Simultaneously other students around the world will be hosting their own Local Hack Days, alongside
+                                WarwickTECH, resulting in the largest single day of student hacking ever. Throughout the day there will be awesome livestreams, chatrooms, and fun activities that you can use to meet students in your local community and
+                                across the globe. Whether you're a seasoned hackathon veteran or have never been to a hackathon before, Local Hack Day is the best way to kick off the Fall 2015 MLH Hackathon Season.</p>
+                            <div class="well well-sm">
+                                <img src="{% static 'landing_page/images/University_of_Warwick.png' %}" class="img-responsive" alt="1">
+                            </div>
+                            <p class="large">More Info Coming Soon!</p>
+                            <div class="row">
+                                <a href="http://localhackday.mlh.io/#/cities/coventry/register" class="btn btn-primary" style="background-color:grey;border-color:grey;">Register</a>
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Startup Weekend</h2>
+                            <p class="item-intro text-muted">Startup Weekends are 54-hour events where developers, designers, marketers, product managers and startup enthusiasts come together to share ideas, form teams, build products and launch startups!</p>
+                            <p class="large">Coming Soon!</p>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Calendar</h2>
+                            <div class="row">
+
+                                <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=uj9fgu5js6uj7v77rjhpl1671g%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Europe%2FLondon"
+                                    style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <span class="fa fa-users fa-5x" aria-hidden="true"></span>
+                                            <h4>Head of Marketing</h4>
+                                            <p>We're after someone who can rally up/inspire the community to come together for our events and socials. Ideally you'll have experience leading both social media and offline marketing campaigns but do not worry
+                                                if you haven't, we're keen for enthusiastic individuals who are willing to learn on the job. You'll be in charge of a team of graphic designers and social media gurus, helping to spread the word about our
+                                                events and working with our partners to increase brand awareness.</p>
+                                        </div>
+                                        <a href="mailto:recruitment@warwick.tech?Subject=Lead%20Publicity%20Officer%20Application&body=Please attach your CV and tell us briefly (max 300 words) why you want to apply for this position." type="button" class="btn btn-primary">Submit</a>
+                                        <p class="item-intro text-muted">Please attach your CV to your email application</p>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <span class="fa fa-twitter fa-5x" aria-hidden="true"></span>
+                                            <h4>Online Marketing Coordinator</h4>
+                                            <p>An ideal applicant will be someone who is extremely active on social media and that is passionate about sharing interesting/upcoming tech trends to our audience. You'll be working on our team to promote the
+                                                society so it's essential that you can collaborate with other team members. We are currently active on Facebook and Twitter but would like to expand this to include Youtube and LinkedIn as well as a blog.</p>
+                                            <a href="mailto:recruitment@warwick.tech?Subject=Social%20Media%20Officer%20Application&body=Please attach your CV and tell us briefly (max 300 words) why you want to apply for this position." type="button" class="btn btn-primary">Submit</a>
+                                            <p class="item-intro text-muted">Please attach your CV to your email application</p>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <span class="fa fa-briefcase fa-5x" aria-hidden="true"></span>
+                                            <h4>Secretary</h4>
+                                            <p>As the secretary at WarwickTECH, you'll be expected to organise the team and ensure that tasks/jobs remain on focus. This is a crucial position on the team and we are looking for someone who is both dependable
+                                                and proactive. We currently use tools such as Asana and Slack for team management but are open to suggestions/improvements. Ideal candidates will be individuals who feel comfortable managing a team as well
+                                                as maintaining a strict ritual for organisation.</p>
+                                            <a href="mailto:recruitment@warwick.tech?Subject=Secretary%20Application&body=Please attach your CV and tell us briefly (max 300 words) why you want to apply for this position." type="button" class="btn btn-primary">Submit</a>
+                                            <p class="item-intro text-muted">Please attach your CV to your email application</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="{% static 'landing_page/js/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script>
+        (function() {
+            var qs, js, q, s, d = document,
+                gi = d.getElementById,
+                ce = d.createElement,
+                gt = d.getElementsByTagName,
+                id = 'typef_orm',
+                b = 'https://s3-eu-west-1.amazonaws.com/share.typeform.com/';
+            if (!gi.call(d, id)) {
+                js = ce.call(d, 'script');
+                js.id = id;
+                js.src = b + 'share.js';
+                q = gt.call(d, 'script')[0];
+                q.parentNode.insertBefore(js, q)
+            }
+        })()
+    </script>
+    <script src="{% static 'landing_page/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'landing_page/js/owl.carousel.min.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                margin: 10,
+                dotsEach: 2,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            })
+        });
+    </script>
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="{% static 'landing_page/js/classie.js' %}"></script>
+
+
+    <script src="{% static 'landing_page/js/cbpAnimatedHeader.js' %}"></script>
+    <script>
+        ! function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'twitter-wjs');
+    </script>
+
+
+    <!-- Contact Form JavaScript -->
+    <script src="{% static 'landing_page/js/jqBootstrapValidation.js' %}"></script>
+    <!-- <script src="{% static 'landing_page/js/contact_me.js' %}"></script> -->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static 'landing_page/js/agency.js' %}"></script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-56259721-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#expand1").click(function() {
+                $("#people").slideToggle(300);
+            });
+        });
+        $(document).ready(function() {
+            $("#expand2").click(function() {
+                $("#partner").slideToggle(300);
+            });
+        });
+        $(document).ready(function() {
+            $("#expand3").click(function() {
+                $("#dev").slideToggle(300);
+            });
+        });
+    </script>
+</body>
+
+</html>
