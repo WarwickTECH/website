@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jobs.apps.JobsConfig',
+    'resources.apps.ResourcesConfig',
     'landing_page.apps.LandingPageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,11 +54,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'warwick_tech.urls'
+LOGIN_REDIRECT_URL = "/jobs/"
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['warwick_tech/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
