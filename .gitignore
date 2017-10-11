@@ -2,3 +2,4 @@
 *.db
 settings_secrets.py
 __pycache__/
+migrations/
