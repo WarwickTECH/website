@@ -2,6 +2,10 @@ from django.db import models
 from django.utils import timezone
 from django.core.validators import RegexValidator
 
+# Helper functions
+def in_one_year():
+    return timezone.now() + timezone.timedelta(days=365)
+
 # Create your models here.
 class Job(models.Model):
     """ Class describing the job object for the mysql database """
@@ -12,7 +16,7 @@ class Job(models.Model):
     description = models.TextField()
     requirements = models.TextField(blank=True)
     issue_date = models.DateTimeField("date issued", default=timezone.now)
-    due_date = models.DateTimeField("Deadline", blank=True)
+    due_date = models.DateTimeField("Deadline", blank=True, default=in_one_year())
     info_link = models.URLField(blank=True)
 
     # Optional phone number
@@ -20,3 +24,6 @@ class Job(models.Model):
     "Up to 15 digits allowed."
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message=message)
     phone_number = models.CharField(validators=[phone_regex], max_length=15, blank=True)
+
+    def __str__(self):
+        return self.title

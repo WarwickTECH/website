@@ -7,6 +7,13 @@
 <body>
     <h1>Jobs Board</h1>
     <p>This is where jobs get listed by random people we hope are corps with jobs</p>
+    <ul>
+    {% for job in list %}
+        <li>
+            {{job.title}}
+        </li>
+    {% endfor %}
+    </ul>
     <a href="/resources/">Check out resouces page</a>
     <a href="/logout/">Logout</a>
 </body>
