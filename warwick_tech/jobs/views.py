@@ -18,3 +18,8 @@ def job_listings(request):
         return render(request, "jobs/listings.html", {"list":jobs_data})
     else:
         return http403()
+
+def add_job(request):
+    #TODO get job form
+
+    return render(request, "jobs/add_job.html")
