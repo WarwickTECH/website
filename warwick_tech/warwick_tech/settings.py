@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'jobs.apps.JobsConfig',
     'resources.apps.ResourcesConfig',
     'landing_page.apps.LandingPageConfig',
+#   'warwick_tech.apps.WarwichTechConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,6 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
             'read_default_file': '/etc/mysql/mysql.cnf',
+            'init_command': 'SET foreign_key_checks = 0;',
         },
     }
 }
@@ -105,6 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTH_USER_MODEL = 'landing_page.MyUser'
 
 
 # Internationalization
