@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 from django.utils import timezone
 from django.core.validators import RegexValidator
 
@@ -27,3 +28,9 @@ class Job(models.Model):
 
     def __str__(self):
         return self.title
+
+class JobForm(ModelForm):
+    class Meta:
+        model = Job
+        fields = ["title", "company_name", "contact_info", "description",
+                "requirements", "due_date", "info_link"]
