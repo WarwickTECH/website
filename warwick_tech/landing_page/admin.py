@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.core.exceptions import ValidationError
+from django.utils.translation import ugettext_lazy as _
 
 # Register your models here.
 from django import forms
@@ -9,16 +11,29 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
 from .models import MyUser
 
+# Validators
+def between_1_12(value):
+    if value < 1 or value > 12:
+        raise ValidationError(
+                _('%(value)s is not a valid year of study'),
+                params={'value': value},
+                )
 
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users.Includes all the required
     fields, plus a repeated password."""
-    password1=forms.CharField(label='Password',widget=forms.PasswordInput)
-    password2=forms.CharField(label='Password confirmation',widget=forms.PasswordInput)
+    password1     =forms.CharField(label='Password',widget=forms.PasswordInput)
+    password2     =forms.CharField(label='Password confirmation',widget=forms.PasswordInput)
+    first_name    =forms.CharField(label="First Name", max_length=30)
+    last_name     =forms.CharField(label="Last Name", max_length=30)
+    course        =forms.CharField(label="Course of Study", max_length=50)
+    year_of_study =forms.IntegerField(label="Year of Study", validators=[between_1_12])
+    gender        =forms.ChoiceField(label="Gender", choices=MyUser.gender_choices)
 
     class Meta:
         model=MyUser
-        fields=('email',)
+        fields=('email', 'first_name', 'last_name', 
+                'course', 'year_of_study', 'gender')
 
     def clean_password2(self):
         #Check that the two password entries match
@@ -45,7 +60,8 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = MyUser
-        fields = ('email', 'password', 'is_active', 'is_admin')
+        fields = ('email', 'password', 'first_name', 'last_name',
+                'course', 'year_of_study', 'gender','is_active', 'is_admin')
 
     def clean_password(self):
         # Regardless of what the user provides, return the initial value.
@@ -65,7 +81,8 @@ class UserAdmin(BaseUserAdmin):
     list_filter = ('is_admin',)
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ()}),
+        ('Personal info', {'fields': ('first_name', 'last_name', 'course',
+                                      'year_of_study', 'gender',)}),
         ('Permissions', {'fields': ('is_admin',)}),
     )
     # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
@@ -73,7 +90,8 @@ class UserAdmin(BaseUserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'password1', 'password2')}
+            'fields': ('email', 'first_name', 'last_name',
+                'course', 'year_of_study', 'gender','password1', 'password2')}
         ),
     )
     search_fields = ('email',)
