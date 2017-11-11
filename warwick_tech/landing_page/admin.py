@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.core.exceptions import ValidationError
+from django.utils.translation import ugettext_lazy as _
 
 # Register your models here.
 from django import forms
@@ -9,6 +11,13 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
 from .models import MyUser
 
+# Validators
+def between_1_12(value):
+    if value < 1 or value > 12:
+        raise ValidationError(
+                _('%(value)s is not a valid year of study'),
+                params={'value': value},
+                )
 
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users.Includes all the required
@@ -18,7 +27,7 @@ class UserCreationForm(forms.ModelForm):
     first_name    =forms.CharField(label="First Name", max_length=30)
     last_name     =forms.CharField(label="Last Name", max_length=30)
     course        =forms.CharField(label="Course of Study", max_length=50)
-    year_of_study =forms.IntegerField(label="Year of Study")
+    year_of_study =forms.IntegerField(label="Year of Study", validators=[between_1_12])
     gender        =forms.ChoiceField(label="Gender", choices=MyUser.gender_choices)
 
     class Meta:

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up to WarwichTech</title>
+</head>
+<body>
+   <h1>Sign Up</h1>
+    <form action="{% url 'jobs_listings' %}", method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit"/>
+    </form>
+    <a href="{% url 'login' %}">Have an account already?</a>
+</body>
+</html>
