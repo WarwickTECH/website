@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseForbidden as http403
 from django.core import serializers
-from .models import Job
+from .models import Job, JobForm
 
 # Create your views here.
 def job_listings(request):
@@ -18,3 +18,13 @@ def job_listings(request):
         return render(request, "jobs/listings.html", {"list":jobs_data})
     else:
         return http403()
+
+def add_job(request):
+    jobs_form = JobForm()
+    return render(request, "jobs/add_job.html", {"form" : jobs_form})
+
+def confirmation(request):
+    # Handle the creation of the new job object
+    new_job_form = JobForm(request.POST)
+    new_job_form.save()
+    return render(request, "jobs/confirmation.html")
