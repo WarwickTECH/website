@@ -1,10 +1,179 @@
-{% block title %}Login{% endblock %}
+{% load static %}
 
-{% block content %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-{% endblock %}
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- <link rel="stylesheet" href="{% static "registration/assets/css/login.css" %}"> -->
+        <!-- UIKIT -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.32/css/uikit.min.css" />
+        <link rel="stylesheet" href="{% static "common/css/main.css" %}">
+        <link rel="stylesheet" href="{% static "registration/assets/css/login.css" %}">
+
+        <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+    </head>
+    <body>
+
+      <div class="nav-content-wrap">
+
+      <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+        <img style="padding: 18px;" class="uk-navbar-item uk-logo" src="{% static "common/img/warwick_tech_black.svg" %}" />
+
+      <div class="uk-navbar-left">
+
+        <!-- <a class="uk-navbar-item uk-logo" href="#"> -->
+        <!-- </a> -->
+
+        <!-- <object type="image/svg+xml" data="{% static "common/img/warwick_tech_logo-black.svg" %}">
+          Your browser does not support SVG
+        </object> -->
+
+          <ul class="uk-navbar-nav">
+              <li class="uk-active"><a href="#">About</a></li>
+              <li>
+                  <a href="#">Sponsors</a>
+                  <div class="uk-navbar-dropdown">
+                      <ul class="uk-nav uk-navbar-dropdown-nav">
+                          <li class="uk-active"><a href="#">Sponsor List</a></li>
+                          <li><a href="#">Sponsor 1</a></li>
+                          <li><a href="#">Sponsor 2</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Sign Up</a></li>
+              <li><a href="#">Resources</a></li>
+
+
+          </ul>
+
+      </div>
+      <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+          <li>
+            <a href="#">Sign In</a>
+          </li>
+        </ul>
+      </div>
+  </nav>
+
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="main-content-container">
+
+        <div class="login-box-container">
+
+        <!-- {% block title %}
+        {% endblock %}
+
+
+        {% block content %}
+          <h2>Login</h2>
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+          </form>
+        {% endblock %} -->
+
+        <form method="post" action="">
+
+          {% csrf_token %}
+
+
+          <h2>Login</h2>
+          <p>Enter your username and password below.</p>
+
+          {% if form.non_field_errors %}
+          <div class="uk-alert-danger" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            {{ form.non_field_errors }}
+          </div>
+          {% endif %}
+
+
+          {% if form.username.errors %}
+          <div class="uk-alert-danger" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            {{ form.username.errors }}
+          </div>
+          {% endif %}
+
+            <div class="uk-margin">
+              <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <!-- {{ form.username }} -->
+                <input placeholder="{{ form.username.label }}" name="{{ form.username.html_name }}" class="uk-input" type="text">
+              </div>
+            </div>
+
+            {% if form.password.errors %}
+            <div class="uk-alert-danger" uk-alert>
+              <a class="uk-alert-close" uk-close></a>
+              {{ form.password.errors }}
+            </div>
+            {% endif %}
+            <div class="uk-margin">
+              <div class="uk-inline">
+                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                <input placeholder="{{ form.password.label }}" name="{{ form.password.html_name }}" class="uk-input" type="password">
+              </div>
+            </div>
+
+            <input class="uk-button uk-button-primary" type="submit" value="Login" />
+
+          </form>
+
+          <!-- <div class="explanation-container">
+
+            <h2>Statement</h2>
+
+            <p>
+              Enter your password details to the left.
+
+              WarwickTECH is committed to ensuring your privacy, we don't give away your data!
+            </p>
+          </div> -->
+        </div>
+
+        <!-- End main content container -->
+      </div>
+
+      <!-- End Nav content wrap -->
+    </div>
+
+      <!-- FOOTER CONTENT -->
+      <footer>
+
+      <div class="uk-section uk-section-secondary uk-light">
+      <div class="uk-container">
+
+          <h3>Useful Links</h3>
+
+          <p>
+            Copyright @ WarwickTECH 2017
+          </p>
+
+      </div>
+      </div>
+      </footer>
+
+        <!-- SCRIPTS -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.32/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.32/js/uikit-icons.min.js"></script>
+
+        <script src="{% static "registration/assets/js/login.js" %}"></script>
+    </body>
+</html>
