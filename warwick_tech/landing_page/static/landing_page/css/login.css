@@ -1,0 +1,12 @@
+body
+{
+    background-color: #5050FF;
+}
+
+.container
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    background-color: white;
+}

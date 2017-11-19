@@ -10,7 +10,19 @@
     <ul>
     {% for job in list %}
         <li>
-            {{job.title}}
+            <div class="job">
+                <ol>
+                    <li>Title: {{job.title}}</li>
+                    <li>Company Name: {{job.company_name}}</li>
+                    <li>Contact Info: {{job.contact_info}}</li>
+                    <li>Description: {{job.description}}</li>
+                    <li>Requirements: {{job.requirements}}</li>
+                    <li>Date Created: {{job.issue_date}}</li>
+                    <li>Due Date: {{job.due_date}}</li>
+                    <li>Info Link: {{job.info_link}}</li>
+                </ol>
+            </div>
+            <br>
         </li>
     {% endfor %}
     </ul>

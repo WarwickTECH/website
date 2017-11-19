@@ -25,12 +25,9 @@ def job_listings(request):
             return redirect('signup')
 
     jobs_query = Job.objects.all()
-    jobs_data = {}
-    for job in jobs_query:
-        jobs_data[job.title] = job
 
     if request.user.is_authenticated:
-        return render(request, "jobs/listings.html", {"list":jobs_data})
+        return render(request, "jobs/listings.html", {"list":jobs_query})
     else:
         return http403()
 
