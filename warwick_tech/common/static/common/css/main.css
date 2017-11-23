@@ -4,5 +4,75 @@ html, body {
 }
 
 body {
-  background-color: #E0E0E0;
+  background-color: white;
+}
+
+div.main-content-wrap {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* NAVIGATION STYLING */
+nav {
+  position: fixed !important; /* Overwrite default UIKIT relative positioning */
+  width: 100%;
+}
+
+/*  FOOTER STYLING  */
+footer {
+  background-color: #0061a9;
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 60px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+div.footer-title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+div.footer-title-wrap > h2 {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+div.footer-social-icon-wrap {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+div.footer-social-icon-wrap a {
+  margin: 5px;
+}
+
+a.footer-icon {
+  /* Dotted border */
+  border: 1px solid white;
+  border-radius: 100%;
+  padding: 8px;
+}
+
+.fadeOnHover {
+  fill: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.8);
+  transition: 0.3s ease-in-out;
+}
+
+.fadeOnHover:hover {
+  fill: white;
+  color: white;
 }

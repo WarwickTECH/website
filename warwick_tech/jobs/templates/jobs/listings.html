@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Jobs</title>
-</head>
+
+{% include 'modules/navbar.html' %}
+{% include 'modules/meta_head.html' %}
+
 <body>
-    <h1>Jobs Board</h1>
-    <p>This is where jobs get listed by random people we hope are corps with jobs</p>
-    <ul>
-    {% for job in list %}
-        <li>
-            <div class="job">
-                <ol>
-                    <li>Title: {{job.title}}</li>
-                    <li>Company Name: {{job.company_name}}</li>
-                    <li>Contact Info: {{job.contact_info}}</li>
-                    <li>Description: {{job.description}}</li>
-                    <li>Requirements: {{job.requirements}}</li>
-                    <li>Date Created: {{job.issue_date}}</li>
-                    <li>Due Date: {{job.due_date}}</li>
-                    <li>Info Link: {{job.info_link}}</li>
-                </ol>
-            </div>
-            <br>
-        </li>
-    {% endfor %}
-    </ul>
-    <a href="/resources/">Check out resouces page</a>
-    <a href="/logout/">Logout</a>
+
+    <div class="main-content-wrap">
+      <h1>Jobs Board</h1>
+      <p>This is where jobs get listed by random people we hope are corps with jobs</p>
+      <ul>
+      {% for job in list %}
+          <li>
+              <div class="job">
+                  <ol>
+                      <li>Title: {{job.title}}</li>
+                      <li>Company Name: {{job.company_name}}</li>
+                      <li>Contact Info: {{job.contact_info}}</li>
+                      <li>Description: {{job.description}}</li>
+                      <li>Requirements: {{job.requirements}}</li>
+                      <li>Date Created: {{job.issue_date}}</li>
+                      <li>Due Date: {{job.due_date}}</li>
+                      <li>Info Link: {{job.info_link}}</li>
+                  </ol>
+              </div>
+              <br>
+          </li>
+      {% endfor %}
+      </ul>
+      <a href="/resources/">Check out resouces page</a>
+      <a href="/logout/">Logout</a>
+    </div>
+
+    {% include 'modules/footer.html' %}
+
+    {% include 'modules/scripts.html' %}
 </body>
 </html>
