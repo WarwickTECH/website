@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'common.apps.CommonConfig',
     'jobs.apps.JobsConfig',
     'resources.apps.ResourcesConfig',
     'landing_page.apps.LandingPageConfig',
@@ -83,8 +84,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'read_default_file': '/etc/mysql/mysql.cnf',
+            'read_default_file': '/etc/mysql/mysql.cnf', # Eavan's database line
             'init_command': 'SET foreign_key_checks = 0;',
+#           'read_default_file': '/etc/mysql/mysql.conf',   # Aarons database line
         },
     }
 }
@@ -129,3 +131,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+STATICFILES_DIRS = (
+    #This lets Django's collectstatic store our bundles
+    os.path.join(BASE_DIR, 'warwick_tech/static/'),
+        os.path.join(BASE_DIR, 'common/static/'),
+
+)
