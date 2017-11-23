@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'common.apps.CommonConfig',
     'jobs.apps.JobsConfig',
     'resources.apps.ResourcesConfig',
     'landing_page.apps.LandingPageConfig',
@@ -41,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webpack_loader'
 ]
 
 MIDDLEWARE = [
@@ -131,14 +131,14 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     #This lets Django's collectstatic store our bundles
     os.path.join(BASE_DIR, 'warwick_tech/static/'),
-        os.path.join(BASE_DIR, 'common/static/'),
+    os.path.join(BASE_DIR, 'common/static/'),
 
 )
 
 
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'bundles/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'warwick_tech/static/registration/webpack-stats.json'),
-    }
-}
+# WEBPACK_LOADER = {
+#     'DEFAULT': {
+#         'BUNDLE_DIR_NAME': 'bundles/',
+#         'STATS_FILE': os.path.join(BASE_DIR, 'warwick_tech/static/registration/webpack-stats.json'),
+#     }
+# }

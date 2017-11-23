@@ -16,3 +16,13 @@ body {
 div.login-box-container {
   max-width: 500px;
 }
+
+
+.nav-content-wrap {
+  height: 100%;
+}
+
+
+footer {
+  bottom: -200px; 
+}

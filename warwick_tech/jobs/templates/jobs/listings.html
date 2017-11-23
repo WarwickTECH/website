@@ -1,12 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Jobs</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="stylesheet" href="{% static "registration/assets/css/login.css" %}"> -->
+
+    <!-- UIKIT -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.32/css/uikit.min.css" />
+    <link rel="stylesheet" href="{% static "common/css/main.css" %}">
+    <link rel="stylesheet" href="{% static "jobs/assets/css/jobs.css" %}">
+
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
 </head>
 <body>
+
+  <!-- Navigation -->
+  {% include 'modules/navbar.html' %}
+<!-- 
+  /Users/aaronbaw/Code/website/warwick_tech/common/templates/modules/navbar.html
+  /Users/aaronbaw/Code/website/warwick_tech/warwick_tech/templates/common/modules/navbar.html
+  /Users/aaronbaw/Code/website/warwick_tech/common/templates/common/modules/navbar.html -->
+
+    <div class="main-content-container">
     <h1>Jobs Board</h1>
-    <p>This is where jobs get listed by random people we hope are corps with jobs</p>
+    <p>
+      Apply to one of the open positions below.
+    </p>
     <ul>
     {% for job in list %}
         <li>
@@ -14,7 +41,175 @@
         </li>
     {% endfor %}
     </ul>
+
+    <div class="jobs-container uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+      <div class="uk-card uk-card-default uk-width-1-3@m">
+        <div class="uk-card-header">
+          <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-auto">
+              <img class="uk-border-circle" width="40" height="40" src="{% static "common/img/warwick_tech_black.svg" %}">
+            </div>
+            <div class="uk-width-expand">
+              <div class="uk-card-badge uk-label">New</div>
+
+              <h3 class="uk-card-title uk-margin-remove-bottom">Community Manager (Marketing Executive)</h3>
+
+              <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+            </div>
+          </div>
+        </div>
+        <div class="uk-card-body">
+          <p>This is a new role at WarwickTECH dedicated to making sure that we grow our community online and offer them the best experience possible.</p>
+        </div>
+        <div class="uk-card-footer">
+          <button uk-toggle="target: #apply-job" class="uk-button uk-button-text">Apply</button>
+        </div>
+      </div>
+
+      <div class="uk-card uk-card-default uk-width-1-3@m">
+        <div class="uk-card-header">
+          <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-auto">
+              <img class="uk-border-circle" width="40" height="40" src="{% static "common/img/warwick_tech_black.svg" %}">
+            </div>
+            <div class="uk-width-expand">
+              <h3 class="uk-card-title uk-margin-remove-bottom">Creator (Creations Executive)</h3>
+              <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+            </div>
+          </div>
+        </div>
+        <div class="uk-card-body">
+          <p>This role is dedicated to designing and creating graphics/content for WarwickTECH.</p>
+        </div>
+        <div class="uk-card-footer">
+          <a href="#" class="uk-button uk-button-text">Apply</a>
+        </div>
+      </div>
+
+      <div class="uk-card uk-card-hover uk-card-body">
+           <h3 class="uk-card-title">Add your own listing</h3>
+           <span uk-icon="icon: plus"></span>
+       </div>
+
+    </div>
+
+    <hr class="uk-divider-icon" />
+
+    <h2> Application Process </h2>
+
+    <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <h3 class="uk-card-title">Step 1</span></h3>
+            <p>Check out the available listings above.</p>
+        </div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-primary uk-card-body">
+            <h3 class="uk-card-title">Step 2</h3>
+            <p>Apply with the link provided.</p>
+        </div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-secondary uk-card-body">
+            <h3 class="uk-card-title">Step 3.</h3>
+            <p>Patiently await your response.</p>
+        </div>
+    </div>
+</div>
+
+    <!-- End Main Content Container -->
+  </div>
+
+
+
+<!--
     <a href="/resources/">Check out resouces page</a>
-    <a href="/logout/">Logout</a>
+    <a href="/logout/">Logout</a> -->
+
+    <!-- FOOTER CONTENT -->
+    <footer>
+
+    <div class="uk-section uk-section-secondary uk-light">
+    <div class="uk-container">
+
+        <h3> Check out our socials. </h3>
+
+
+        <a href="" uk-icon="icon: facebook"></a>
+
+        <a href="" uk-icon="icon: twitter"></a>
+
+        <a href="" uk-icon="icon: medium"></a>
+
+        <a href="" uk-icon="icon: linkedin"></a>
+
+
+        <p>
+          Copyright @ WarwickTECH 2017
+        </p>
+    </div>
+    </div>
+    </footer>
+
+    <!-- Application modals -->
+    <div id="apply-job" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Application Submission</h2>
+          <p>
+            Please enter details carefully below.
+          </p>
+
+          <form>
+            <fieldset class="uk-fieldset">
+
+              <legend class="uk-legend">Application Form</legend>
+
+              <div class="uk-margin">
+                <input class="uk-input" type="text" placeholder="Input">
+              </div>
+
+              <div class="uk-margin">
+                <select class="uk-select">
+                  <option>Option 01</option>
+                  <option>Option 02</option>
+                </select>
+              </div>
+
+              <div class="uk-margin">
+                <textarea class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
+              </div>
+
+              <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                <label><input class="uk-radio" type="radio" name="radio2" checked> A</label>
+                <label><input class="uk-radio" type="radio" name="radio2"> B</label>
+              </div>
+
+              <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                <label><input class="uk-checkbox" type="checkbox" checked> A</label>
+                <label><input class="uk-checkbox" type="checkbox"> B</label>
+              </div>
+
+              <div class="uk-margin">
+                <input class="uk-range" type="range" value="2" min="0" max="10" step="0.1">
+              </div>
+
+            </fieldset>
+          </form>
+
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+              <button class="uk-button uk-button-primary" type="button">Apply</button>
+          </p>
+      </div>
+  </div>
+
+    <!-- SCRIPTS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.32/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.32/js/uikit-icons.min.js"></script>
+
+    <script src="{% static "jobs/assets/js/jobs.js" %}"></script>
 </body>
 </html>

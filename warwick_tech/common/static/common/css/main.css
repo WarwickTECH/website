@@ -3,6 +3,12 @@ html, body {
   width: 100%;
 }
 
-body {
+html {
   background-color: #E0E0E0;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  /*bottom: -200px;*/
 }
