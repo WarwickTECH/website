@@ -36,13 +36,14 @@ INSTALLED_APPS = [
     'jobs.apps.JobsConfig',
     'resources.apps.ResourcesConfig',
     'landing_page.apps.LandingPageConfig',
-#   'warwick_tech.apps.WarwichTechConfig',
+    # 'warwick_tech.apps.WarwichTechConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -84,9 +85,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'read_default_file': '/etc/mysql/mysql.cnf', # Eavan's database line
+            # 'read_default_file': '/etc/mysql/mysql.cnf', # Eavan's database line
             'init_command': 'SET foreign_key_checks = 0;',
-#           'read_default_file': '/etc/mysql/mysql.conf',   # Aarons database line
+          'read_default_file': '/etc/mysql/mysql.conf',   # Aarons database line
         },
     }
 }
