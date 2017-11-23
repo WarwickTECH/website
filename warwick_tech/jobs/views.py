@@ -27,7 +27,7 @@ def job_listings(request):
     jobs_query = Job.objects.all()
 
     if request.user.is_authenticated:
-        return render(request, "jobs/listings.html", {"list":jobs_query})
+        return render(request, "jobs/listings.html", {"list":jobs_query, 'page_title':'Jobs', 'app_name':'jobs'})
     else:
         return http403()
 
