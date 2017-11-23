@@ -33,10 +33,12 @@ def job_listings(request):
 
 def add_job(request):
     jobs_form = JobForm()
-    return render(request, "jobs/add_job.html", {"form" : jobs_form})
+    data_dict = {"form": jobs_form, "page_title": "Add Job", "app_name": "job"}
+    return render(request, "jobs/add_job.html", data_dict)
 
 def confirmation(request):
     # Handle the creation of the new job object
     new_job_form = JobForm(request.POST)
     new_job_form.save()
-    return render(request, "jobs/confirmation.html")
+    data_dict = {"page_title": "Success", "app_name": "job"}
+    return render(request, "jobs/confirmation.html", data_dict)
