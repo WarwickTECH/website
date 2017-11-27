@@ -40,9 +40,52 @@ nav {
     color: #1b4c71;
 }
 
+/* JOBS PAGE STYLES */
+div.jobs {
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+
+/* Adjust content wrap to allow for two columns. */
+div.jobs-content {
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
 /* JOB CARD STYLING */
 div.job-card {
-  margin-top: 20px;
+  margin: 30px;
+}
+
+div.jobs-deadline {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: 25px;
+}
+
+li.job-deadline-item {
+  display: flex;
+  align-items: center;
+}
+
+div.job-deadline-num-wrap {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid darkgrey;
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+
+
+/* Add jobs form */
+form.add-job-form {
+  margin: 30px;
 }
 
 /*  FOOTER STYLING  */

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 {% include 'modules/meta_head.html' %}
@@ -6,31 +7,60 @@
 
 <body>
 
-    <div class="main-content-wrap">
+    <div class="main-content-wrap jobs-content">
 
       <div class="jobs">
 
-        <h1>CAREERS</h1>
+        <h1 style="margin-left: 30px;">CAREERS</h1>
 
-        <!-- <div class="max-w-sm rounded overflow-hidden shadow-lg">
-          <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
+
+
+      <div class="max-w-md w-full lg:flex">
+
+        {% for job in list %}
+
+        <!-- Create Modal for this specific job -->
+
+        <!-- This is the modal -->
+
+        <div id="job-modal-{{ forloop.counter }}" uk-modal>
+          <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+              <h2 class="uk-modal-title">About Job Posting</h2>
+            </div>
+            <div class="uk-modal-body">
+
+
+              <h2>{{ job.title }}</h2>
+
+              <p>
+                {{ job.description }}
+              </p>
+            </div>
+            <div class="uk-modal-footer uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+              <a target="_blank" href="{{ job.info_link }}" class="uk-button uk-button-primary">Apply</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="job-card max-w-sm rounded overflow-hidden shadow-lg">
+          <!-- <img class="w-full" src="http://source.unsplash.com/XJXWbfSo2f0" alt="Sunset in the mountains" /> -->
           <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+            <div class="font-bold text-xl mb-2">{{ job.title }}</div>
             <p class="text-grey-darker text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+              {{job.description}}
             </p>
           </div>
           <div class="px-6 py-4">
-            <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
-            <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
-            <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
+            <button uk-toggle="target: #job-modal-{{ forloop.counter }}" class="text-xs font-semibold rounded-full px-4 py-1 leading-normal bg-white border border-blue text-blue hover:bg-blue hover:text-white">Apply</button>
+            <!-- <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#software</span> -->
           </div>
-        </div> -->
-
-      {% for job in list %}
-      <div class="job-card max-w-md w-full lg:flex">
-        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('http://source.unsplash.com/XJXWbfSo2f0')" title="Woman holding a mug">
         </div>
+
+
+        <!-- <div uk-parallax="bgy: -20" class="job-card h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('http://source.unsplash.com/XJXWbfSo2f0')" title="Woman holding a mug">
         <div class="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
           <div class="mb-8">
             <p class="text-sm text-grey-dark flex items-center">
@@ -47,13 +77,23 @@
             <div class="text-sm">
               <p class="text-black leading-none">{{job.company_name}}</p>
               <p class="text-grey-dark">Posted: {{job.issue_date}}</p>
-              <!-- <p class="text-grey-dark">Due: {{job.due_date}}</p> -->
             </div>
           </div>
         </div>
+      </div> -->
+
+
+        {% endfor %}
+
+
       </div>
 
-      {% endfor %}
+      <div class="jobs-deadline-wrap">
+
+
+
+      </div>
+
 
     </div>
                       <!-- <li>Title: {{job.title}}</li>
@@ -64,10 +104,45 @@
                       <li>Date Created: {{job.issue_date}}</li>
                       <li>Due Date: {{job.due_date}}</li>
                       <li>Info Link: {{job.info_link}}</li> -->
+
+      <div class="jobs-deadline">
+
+        <h1>DEADLINES</h1>
+         <ul class="uk-list uk-list-large uk-list-divider">
+
+           {% for job in list %}
+
+           <li class="job-deadline-item">
+
+             <div class="job-deadline-num-wrap">
+               <strong data-date="{{ job.due_date }}">
+                 ...
+               </strong>
+             </div>
+
+             <div class="job-deadline-wrap">
+               <h2>
+                 {{job.company_name}}
+               </h2>
+               <p>
+                 {{job.title}}
+               </p>
+             </div>
+
+           </li>
+
+           {% endfor %}
+         </ul>
+
+      </div>
+
     </div>
 
     {% include 'modules/footer.html' %}
 
     {% include 'modules/scripts.html' %}
+
+    <script src="{% static 'common/js/listing.js' %}" ></script>
+
 </body>
 </html>
