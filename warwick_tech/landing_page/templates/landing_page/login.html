@@ -9,7 +9,7 @@
 <body>
 
   <div class="main-content-wrap">
-    <div class="container">
+    <div class="login-box-container">
       <form method="post" action="">
 
         {% csrf_token %}
@@ -55,10 +55,11 @@
           </div>
 
           <input class="uk-button uk-button-primary" type="submit" value="Login" />
+          <a href="{% url 'signup' %}" class="uk-button uk-button-default">Sign Up</a>
 
         </form>
 
-    <a href="{% url 'signup' %}">Don't have an account?</a>
+    <!-- <a href="{% url 'signup' %}">Don't have an account?</a> -->
     </div>
 
   </div>
