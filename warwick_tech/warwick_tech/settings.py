@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'widget_tweaks',
     'common.apps.CommonConfig',
     'jobs.apps.JobsConfig',
     'resources.apps.ResourcesConfig',
@@ -85,9 +86,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            # 'read_default_file': '/etc/mysql/mysql.cnf', # Eavan's database line
+            'read_default_file': '/etc/mysql/mysql.cnf', # Eavan's database line
             'init_command': 'SET foreign_key_checks = 0;',
-          'read_default_file': '/etc/mysql/mysql.conf',   # Aarons database line
+            #'read_default_file': '/etc/mysql/mysql.conf',   # Aarons database line
         },
     }
 }
