@@ -1,15 +1,52 @@
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
+{% include 'modules/meta_head.html' %}
+
+{% include 'modules/navbar.html' %}
 <body>
-    <h1>Add Jobs Here</h1>
-    <form action="{% url 'confirmation' %}" method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit"/>
-    </form>
+
+  <div class="main-content-wrap">
+    <h1 style="margin: 30px; margin-top: 50px;">Submit a job</h1>
+
+    <form class="add-job-form" action="{% url 'confirmation' %}" method="POST">
+      {% csrf_token %}
+      <fieldset class="uk-fieldset">
+
+          <legend class="uk-legend">Submit Job Posting to the Members Area</legend>
+
+          <p>
+            Enter details below to get your desired listing advertised on our platform.
+          </p>
+
+          {% for field in form %}
+
+          <div class="uk-margin">
+            <label class="uk-form-label" for="form-horizontal-text">{{field.label}}
+            {% if field.label == "Info link" %}
+                (include http://)
+            {% endif %}
+            </label>
+            <div class="uk-form-controls">
+              <!-- <input class="uk-input" id="form-horizontal-text" type="text" > -->
+              {{field|add_class:"uk-input"|attr:"id:form-horizontal-text"}}
+            </div>
+          </div>
+          {% endfor %}
+
+          <input type="submit" class="uk-button uk-button-default" />
+
+      </fieldset>
+  </form>
+  </div>
+
+
+
+    {% include 'modules/footer.html' %}
+
+    {% include 'modules/scripts.html' %}
+
 </body>
+
+
 </html>

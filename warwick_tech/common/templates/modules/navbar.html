@@ -1,0 +1,30 @@
+{% load static %}
+<nav class="uk-navbar-container uk-navbar-transparent uk-fixed" uk-navbar>
+  <img style="padding: 18px;" class="uk-navbar-item uk-logo" src="{% static "common/img/warwick_tech_black.svg" %}" />
+
+  <div class="uk-navbar-left">
+
+  <ul class="uk-navbar-nav">
+    <li><a href="/">About</a></li>
+    <li
+      {% if app_name == "jobs" %}
+        class="uk-active"
+      {% endif %}
+    ><a href="/jobs">Jobs</a></li>
+    <li
+      {% if app_name == "resources" %}
+        class="uk-active"
+      {% endif %}
+    ><a href="/resources">Resources</a></li>
+  </ul>
+
+</div>
+<div class="uk-navbar-right">
+  <ul class="uk-navbar-nav">
+    <li>
+      <a style="color: #bb8585" href="/logout">Logout</a>
+      <!-- <a href="/logout">{{ request.user.first_name }}</a> -->
+    </li>
+  </ul>
+</div>
+</nav>
