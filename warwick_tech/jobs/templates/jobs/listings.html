@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'modules/meta_head.html' %}
+
+{% include 'modules/navbar.html' %}
+
+<body>
+
+    <div class="main-content-wrap jobs-content">
+
+      <div class="jobs">
+
+        <h1 style="margin-left: 30px;">CAREERS</h1>
+
+
+
+      <div class="max-w-md w-full lg:flex">
+
+        {% for job in list %}
+
+        <!-- Create Modal for this specific job -->
+
+        <!-- This is the modal -->
+
+        <div id="job-modal-{{ forloop.counter }}" uk-modal>
+          <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+              <h2 class="uk-modal-title">About Job Posting</h2>
+            </div>
+            <div class="uk-modal-body">
+
+
+              <h2>{{ job.title }}</h2>
+
+              <p>
+                {{ job.description }}
+              </p>
+            </div>
+            <div class="uk-modal-footer uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+              <a target="_blank" href="{{ job.info_link }}" class="uk-button uk-button-primary">Apply</a>
+            </div>
+          </div>
+        </div>
+
+        <a uk-toggle="target: #job-modal-{{ forloop.counter }}" style="color: inherit; text-decoration: inherit;"><div class="job-card max-w-sm rounded overflow-hidden shadow">
+          <img class="w-full" src="https://www.etech.net/wp-content/uploads/2016/02/Hack-logo.jpg" alt="Sunset in the mountains" />
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">{{ job.title }}</div>
+            <p class="text-grey-darker text-base">
+              {{job.description}}
+            </p>
+          </div>
+          <div class="px-6 py-4">
+            <!-- <button uk-toggle="target: #job-modal-{{ forloop.counter }}" class="text-xs font-semibold rounded-full px-4 py-1 leading-normal bg-white border border-blue text-blue hover:bg-blue hover:text-white">Apply</button> -->
+            <!-- <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#software</span> -->
+          </div>
+        </div></a>
+
+
+        <!-- <div uk-parallax="bgy: -20" class="job-card h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('http://source.unsplash.com/XJXWbfSo2f0')" title="Woman holding a mug">
+        <div class="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+          <div class="mb-8">
+            <p class="text-sm text-grey-dark flex items-center">
+              <svg class="text-grey w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
+              </svg>
+              Members only
+            </p>
+            <div class="text-black font-bold text-xl mb-2">{{job.title}}</div>
+            <p class="text-grey-darker text-base">{{job.description}}</p>
+          </div>
+          <div class="flex items-center">
+            <img class="w-10 h-10 rounded-full mr-4" src="https://d30y9cdsu7xlg0.cloudfront.net/png/70816-200.png" alt="Avatar of Jonathan Reinink">
+            <div class="text-sm">
+              <p class="text-black leading-none">{{job.company_name}}</p>
+              <p class="text-grey-dark">Posted: {{job.issue_date}}</p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+        {% endfor %}
+
+
+      </div>
+
+      <div class="jobs-deadline-wrap">
+
+
+
+      </div>
+
+
+    </div>
+                      <!-- <li>Title: {{job.title}}</li>
+                      <li>Company Name: {{job.company_name}}</li>
+                      <li>Contact Info: {{job.contact_info}}</li>
+                      <li>Description: {{job.description}}</li>
+                      <li>Requirements: {{job.requirements}}</li>
+                      <li>Date Created: {{job.issue_date}}</li>
+                      <li>Due Date: {{job.due_date}}</li>
+                      <li>Info Link: {{job.info_link}}</li> -->
+
+      <div class="jobs-deadline">
+
+        <h1>DEADLINES</h1>
+         <ul class="uk-list uk-list-large uk-list-divider">
+
+           {% for job in list %}
+
+           <li class="job-deadline-item">
+
+             <div class="job-deadline-num-wrap">
+               <strong data-date="{{ job.due_date }}">
+                 ...
+               </strong>
+             </div>
+
+             <div class="job-deadline-wrap">
+               <h2>
+                 {{job.company_name}}
+               </h2>
+               <p>
+                 {{job.title}}
+               </p>
+             </div>
+
+           </li>
+
+           {% endfor %}
+         </ul>
+
+      </div>
+
+    </div>
+
+    {% include 'modules/footer.html' %}
+
+    {% include 'modules/scripts.html' %}
+
+    <script src="{% static 'common/js/listing.js' %}" ></script>
+
+</body>
+</html>

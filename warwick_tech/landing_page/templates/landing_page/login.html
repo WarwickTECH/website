@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'modules/meta_head.html' %}
+{% include 'modules/navbar.html' %}
+
+<body>
+
+  <div class="main-content-wrap">
+    <div class="login-box-container">
+      <form method="post" action="">
+
+        {% csrf_token %}
+
+
+        <h2>Login</h2>
+        <p>Enter your username and password below.</p>
+
+        {% if form.non_field_errors %}
+        <div style="max-width: 250px;" class="uk-alert-danger" uk-alert>
+          <a class="uk-alert-close" uk-close></a>
+          {{ form.non_field_errors }}
+        </div>
+        {% endif %}
+
+
+        {% if form.username.errors %}
+        <div class="uk-alert-danger" uk-alert>
+          <a class="uk-alert-close" uk-close></a>
+          {{ form.username.errors }}
+        </div>
+        {% endif %}
+
+          <div class="uk-margin">
+            <div class="uk-inline">
+              <span class="uk-form-icon" uk-icon="icon: user"></span>
+              <!-- {{ form.username }} -->
+              <input placeholder="{{ form.username.label }}" name="{{ form.username.html_name }}" class="uk-input" type="text">
+            </div>
+          </div>
+
+          {% if form.password.errors %}
+          <div class="uk-alert-danger" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            {{ form.password.errors }}
+          </div>
+          {% endif %}
+          <div class="uk-margin">
+            <div class="uk-inline">
+              <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+              <input placeholder="{{ form.password.label }}" name="{{ form.password.html_name }}" class="uk-input" type="password">
+            </div>
+          </div>
+
+          <input class="uk-button uk-button-primary" type="submit" value="Login" />
+          <a href="{% url 'signup' %}" class="uk-button uk-button-default">Sign Up</a>
+
+        </form>
+
+    <!-- <a href="{% url 'signup' %}">Don't have an account?</a> -->
+    </div>
+
+  </div>
+
+    {% include 'modules/footer.html' %}
+
+    {% include 'modules/scripts.html' %}
+</body>
+</html>
