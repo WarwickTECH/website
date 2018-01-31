@@ -20,5 +20,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^jobs/', include("jobs.urls"), name="jobs"),
     url(r'^resources/', include("resources.urls"), name="resources"),
+    url(r'^hack/', include("hack.urls"), name="hack"),
     url(r'^', include("landing_page.urls"), name="landing_page")
 ]
